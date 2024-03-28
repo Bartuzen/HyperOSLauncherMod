@@ -1,0 +1,1 @@
+-keep class dev.bartuzen.hyperos_launcher_mod.XposedInit
