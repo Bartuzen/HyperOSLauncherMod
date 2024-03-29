@@ -48,21 +48,21 @@ class SettingsActivity : ComponentActivity() {
                         ) {
                             listPreference(
                                 key = "icons_horizontal",
-                                title = { Text(text = "Horizontal Icon Count") },
+                                title = { Text(text = "Horizontal icon count") },
                                 summary = { Text(text = it.toString()) },
                                 values = listOf(1, 2, 3, 4, 5, 6),
                                 defaultValue = 4
                             )
                             listPreference(
                                 key = "icons_vertical",
-                                title = { Text(text = "Vertical Icon Count") },
+                                title = { Text(text = "Vertical icon count") },
                                 summary = { Text(text = it.toString()) },
                                 values = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                                 defaultValue = 6
                             )
                             switchPreference(
                                 key = "disable_clear_all_killing_background_tasks",
-                                title = { Text(text = "Disable Clear All Button Killing Background Tasks")},
+                                title = { Text(text = "Disable clear all button killing background tasks")},
                                 defaultValue = false,
                             )
                         }
