@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import me.zhanghai.compose.preference.ProvidePreferenceLocals
 import me.zhanghai.compose.preference.getPreferenceFlow
 import me.zhanghai.compose.preference.listPreference
+import me.zhanghai.compose.preference.switchPreference
 
 class SettingsActivity : ComponentActivity() {
     @SuppressLint("WorldReadableFiles")
@@ -58,6 +59,11 @@ class SettingsActivity : ComponentActivity() {
                                 title = { Text(text = "Vertical Icon Count") },
                                 values = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                                 summary = { Text(text = it.toString()) }
+                            )
+                            switchPreference(
+                                key = "disable_clear_all_killing_background_tasks",
+                                title = { Text(text = "Disable Clear All Button Killing Background Tasks")},
+                                defaultValue = false,
                             )
                         }
                     }
