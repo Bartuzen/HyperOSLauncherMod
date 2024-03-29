@@ -45,5 +45,18 @@ class XposedInit : IXposedHookLoadPackage {
                 }
             )
         }
+
+        if (pref.getBoolean("disable_clear_all_toast_message", false)) {
+            XposedHelpers.findAndHookMethod(
+                "com.miui.home.recents.views.RecentsDecorations",
+                classLoader,
+                "showToastAfterClearAllTask",
+                object : XC_MethodHook() {
+                    override fun beforeHookedMethod(param: MethodHookParam) {
+                        param.result = null
+                    }
+                }
+            )
+        }
     }
 }

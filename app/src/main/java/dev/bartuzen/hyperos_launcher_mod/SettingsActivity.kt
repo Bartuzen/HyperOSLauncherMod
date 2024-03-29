@@ -65,6 +65,11 @@ class SettingsActivity : ComponentActivity() {
                                 title = { Text(text = "Disable clear all button killing background tasks")},
                                 defaultValue = false,
                             )
+                            switchPreference(
+                                key = "disable_clear_all_toast_message",
+                                title = { Text(text = "Disable clear all button toast message")},
+                                defaultValue = false,
+                            )
                         }
                     }
                 }
