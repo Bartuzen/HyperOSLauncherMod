@@ -33,19 +33,6 @@ class XposedInit : IXposedHookLoadPackage {
             }
         )
 
-        if (pref.getBoolean("disable_clear_all_killing_background_tasks", false)) {
-            XposedHelpers.findAndHookMethod(
-                "com.miui.home.recents.views.RecentsContainer",
-                classLoader,
-                "deepClean",
-                object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.result = null
-                    }
-                }
-            )
-        }
-
         if (pref.getBoolean("disable_clear_all_toast_message", false)) {
             XposedHelpers.findAndHookMethod(
                 "com.miui.home.recents.views.RecentsDecorations",
